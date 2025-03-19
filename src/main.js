@@ -1,10 +1,12 @@
-import { createGallery } from './js/1-gallery.js';
-import { handleForm } from './js/2-form.js';
+
+import { createTimer } from './js/1-timer';
+import { handleForm } from './js/2-snackbar.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.location.pathname.includes("1-gallery.html")) {
-    createGallery();
-  } else if (window.location.pathname.includes("2-form.html")) {
+  console.log(window.location.pathname)
+  if (window.location.pathname.includes("1-timer.html")) {
+    createTimer();
+  } else if (window.location.pathname.includes("2-snackbar.html")) {
     handleForm();
   }
 
@@ -21,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const html = await response.text();
         contentSection.innerHTML = html;
 
-        if (url.includes("1-gallery.html")) {
-          createGallery();
-        } else if (url.includes("2-form.html")) {
+        if (url.includes("1-timer.html")) {
+          createTimer();
+        } else if (url.includes("2-snackbar.html")) {
           handleForm();
         }
       } catch (error) {
